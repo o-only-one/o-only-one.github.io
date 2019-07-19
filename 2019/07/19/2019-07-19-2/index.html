@@ -79,13 +79,17 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="BlueSky">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="为什么用Object.prototype.toString.call(obj)去检测类型？在看vue的发布者-订阅者模式的时候看到这么一句代码（无注释） 1if(Object.prototype.toString.call(callback) !== &apos;[object Function]&apos;) return  一点都不明白所要表达的意思，然后就问了下度娘，发现这段代码其实是为了检测传入数据的类型，我">
+<meta property="og:type" content="article">
+<meta property="og:title" content="为什么用Object.prototype.toString.call(obj)去检测类型？">
+<meta property="og:url" content="http://yoursite.com/2019/07/19/2019-07-19-2/index.html">
 <meta property="og:site_name" content="BlueSky">
+<meta property="og:description" content="为什么用Object.prototype.toString.call(obj)去检测类型？在看vue的发布者-订阅者模式的时候看到这么一句代码（无注释） 1if(Object.prototype.toString.call(callback) !== &apos;[object Function]&apos;) return  一点都不明白所要表达的意思，然后就问了下度娘，发现这段代码其实是为了检测传入数据的类型，我">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-07-19T04:01:45.650Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="BlueSky">
+<meta name="twitter:title" content="为什么用Object.prototype.toString.call(obj)去检测类型？">
+<meta name="twitter:description" content="为什么用Object.prototype.toString.call(obj)去检测类型？在看vue的发布者-订阅者模式的时候看到这么一句代码（无注释） 1if(Object.prototype.toString.call(callback) !== &apos;[object Function]&apos;) return  一点都不明白所要表达的意思，然后就问了下度娘，发现这段代码其实是为了检测传入数据的类型，我">
 
 
 
@@ -115,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/">
+  <link rel="canonical" href="http://yoursite.com/2019/07/19/2019-07-19-2/">
 
 
 
 
 
-  <title>BlueSky</title>
+  <title>为什么用Object.prototype.toString.call(obj)去检测类型？ | BlueSky</title>
   
 
 
@@ -140,8 +144,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -214,9 +217,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -246,9 +249,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/07/19/2019-07-19-2/" itemprop="url">为什么用Object.prototype.toString.call(obj)去检测类型？</a></h1>
+          <h1 class="post-title" itemprop="name headline">为什么用Object.prototype.toString.call(obj)去检测类型？</h1>
         
 
         <div class="post-meta">
@@ -298,9 +299,7 @@
       
 
       
-        
-          
-            <h3 id="为什么用Object-prototype-toString-call-obj-去检测类型？"><a href="#为什么用Object-prototype-toString-call-obj-去检测类型？" class="headerlink" title="为什么用Object.prototype.toString.call(obj)去检测类型？"></a>为什么用Object.prototype.toString.call(obj)去检测类型？</h3><p>在看vue的发布者-订阅者模式的时候看到这么一句代码（无注释）</p>
+        <h3 id="为什么用Object-prototype-toString-call-obj-去检测类型？"><a href="#为什么用Object-prototype-toString-call-obj-去检测类型？" class="headerlink" title="为什么用Object.prototype.toString.call(obj)去检测类型？"></a>为什么用Object.prototype.toString.call(obj)去检测类型？</h3><p>在看vue的发布者-订阅者模式的时候看到这么一句代码（无注释）</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(<span class="built_in">Object</span>.prototype.toString.call(callback) !== <span class="string">'[object Function]'</span>) <span class="keyword">return</span></span><br></pre></td></tr></table></figure>
 
 <p>一点都不明白所要表达的意思，然后就问了下度娘，发现这段代码其实是为了检测传入数据的类型，<br>我们平时检测类型不是用typeOf就是instanceof操作符，详细了解这个方式之后，觉得也是有其优势的，因为null的typeof是object，array的结果也是object，而有时候我们需要的是纯粹的object。</p>
@@ -318,8 +317,6 @@
 
 <p>删除了Array的toString方法后，同样采用arr.toString方法调用，不在有屏蔽Object原型方法的实例方法，因此沿着原型链，arr最后调用了Object的toString方法，返回了和Object.prototype.toString.call(obj)<br>相同的结果。</p>
 
-          
-        
       
     </div>
     
@@ -336,144 +333,28 @@
       
 
       
-
-      
-
       
       
-        <div class="post-eof"></div>
+
       
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/19/2019-07-19-1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="BlueSky">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/07/19/2019-07-19-1/" itemprop="url">DOS中进入盘符和文件夹</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-07-19T11:56:15+08:00">
-                2019-07-19
-              </time>
+              <a href="/2019/07/19/2019-07-19-1/" rel="next" title="DOS中进入盘符和文件夹">
+                <i class="fa fa-chevron-left"></i> DOS中进入盘符和文件夹
+              </a>
             
+          </div>
 
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
             
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <h3 id="在DOS中如何进入盘符和文件夹"><a href="#在DOS中如何进入盘符和文件夹" class="headerlink" title="在DOS中如何进入盘符和文件夹"></a>在DOS中如何进入盘符和文件夹</h3><p>之前都是用快捷键直接在对应目录下 shift+鼠标右键 来打开命令窗口，公司给换了主机，发现<br>shift+鼠标右键选择只有 Powershell ,一方面是想如何通过命令进入指定盘符和文件夹，另一个方<br>面看习惯了DOS的窗口，突然打开 Powershell 的有些不习惯，碍于自己是个伪程序员，所以有必要<br>向无所不能的程序员奋斗，因此在网上搜罗了一番。</p>
-<ul>
-<li>快捷键<code>win + R</code>,打开运行面板，输入 <code>cmd</code> ,然后’确定’。</li>
-<li>进入dos后，输入要进入的盘符。</li>
-<li>如要进入D盘，则输入<code>d:</code>回车即可。</li>
-<li>如若要进入D盘对应文件夹web下边的css文件夹，输入<code>cd web\css</code>回车。</li>
-<li>回到上级目录的命令是<code>cd..</code>。</li>
-</ul>
-<h4 id="如何使用dos命令删除文件夹和文件"><a href="#如何使用dos命令删除文件夹和文件" class="headerlink" title="如何使用dos命令删除文件夹和文件"></a>如何使用dos命令删除文件夹和文件</h4><ul>
-<li>删除文件可以直接进入文件对应的位置，然后通过<code>del 文件名</code>删除；</li>
-<li>删除文件夹以及文件夹的内容<code>rd/s/q 盘符名:\文件夹名</code></li>
-<li>删除空的文件夹:<code>rd 盘符名:\文件夹名</code></li>
-</ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -483,157 +364,11 @@
   </article>
 
 
-    
-      
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/19/2019-07-19/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="BlueSky">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/07/19/2019-07-19/" itemprop="url">github克隆项目到本地</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-07-19T11:48:53+08:00">
-                2019-07-19
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h4 id="新手安装git之后如何clone我们在github上看到的项目"><a href="#新手安装git之后如何clone我们在github上看到的项目" class="headerlink" title="新手安装git之后如何clone我们在github上看到的项目"></a>新手安装git之后如何clone我们在github上看到的项目</h4><p>之前在公司安装了git，由于临时换了电脑重新安装git，突然发现git clone url报错<br><img src="/2019/07/19/2019-07-19/error.png" alt="git clone error" title="git clone 报错"></p>
-<ul>
-<li>权限被拒绝(publickey)</li>
-<li>无法从远程库读取</li>
-</ul>
-<p>所以思考是不是没有创建SSH Key。接着我就按照网上的方式找到了用户目录下的.ssh的文件夹，发现里面<br>没有<code>id_rsa</code>和<code>id_rsa.pub</code>这两个文件；<br>既然没有这个文件，我自然是需要创建的</p>
-<ul>
-<li>首先,在打开git bash 并且输入<code>ssh-keygen -t rsa -C &quot;youremail@example.com&quot;</code></li>
-<li>这里的<code>youremail@example.com</code>指的是我们自己的邮箱</li>
-<li>然后我们会发现c盘（我的是c盘）administrator下生成了.ssh文件夹，并且里面对应有<code>id_rsa</code>和<code>id_rsa.pub</code>两个文件，如下图：</li>
-</ul>
-<p><img src="/2019/07/19/2019-07-19/rsa.jpg" alt="id_rsa" title="生成的rsa"></p>
-<ul>
-<li>将<code>id_rsa.pub</code>用记事本打开并且复制内容到剪切板</li>
-<li>登录github账号，点击右上角小图标下拉setting</li>
-</ul>
-<p><img src="/2019/07/19/2019-07-19/pointPic.png" alt="pointPic" title="点击图片选择setting"></p>
-<ul>
-<li>跳转页面之后点击左侧<code>SSH and GPG keys</code></li>
-</ul>
-<p><img src="/2019/07/19/2019-07-19/addRsa.png" alt="addRsa" title="添加rsa"></p>
-<ul>
-<li>点击<code>New SSH key</code>按钮，然后填上自己命名的Title</li>
-</ul>
-<p><img src="/2019/07/19/2019-07-19/writeRsa.png" alt="pasteRsa" title="粘贴RSA"></p>
-<ul>
-<li>key下面的文本域就给我们之前复制的内容粘贴到里面，然后<code>Add SSH key</code>就完成了</li>
-</ul>
-
-          
-        
+    <div class="post-spread">
       
     </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
   </div>
-  
-  
-  
-  </article>
-
-
-    
-  </section>
-
-  
 
 
           </div>
@@ -641,6 +376,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -661,8 +400,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -704,6 +452,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么用Object-prototype-toString-call-obj-去检测类型？"><span class="nav-number">1.</span> <span class="nav-text">为什么用Object.prototype.toString.call(obj)去检测类型？</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -844,6 +608,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
