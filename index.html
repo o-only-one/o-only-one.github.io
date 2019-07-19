@@ -80,12 +80,12 @@
 
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
+<meta property="og:title" content="BlueSky">
 <meta property="og:url" content="http://yoursite.com/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:site_name" content="BlueSky">
 <meta property="og:locale" content="default">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="BlueSky">
 
 
 
@@ -121,7 +121,7 @@
 
 
 
-  <title>Hexo</title>
+  <title>BlueSky</title>
   
 
 
@@ -152,7 +152,7 @@
     <div class="custom-logo-site-title">
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Hexo</span>
+        <span class="site-title">BlueSky</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -229,7 +229,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/19/github克隆项目失败/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/19/2019-7-19/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="John Doe">
@@ -238,7 +238,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
+      <meta itemprop="name" content="BlueSky">
     </span>
 
     
@@ -248,7 +248,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/07/19/github克隆项目失败/" itemprop="url">github克隆项目失败</a></h1>
+                <a class="post-title-link" href="/2019/07/19/2019-7-19/" itemprop="url">github克隆项目失败</a></h1>
         
 
         <div class="post-meta">
@@ -260,7 +260,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-07-19T11:11:40+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-07-19T11:28:29+08:00">
                 2019-07-19
               </time>
             
@@ -300,7 +300,7 @@
       
         
           
-            <h4 id="新手安装git之后如何clone我们在github上看到的项目"><a href="#新手安装git之后如何clone我们在github上看到的项目" class="headerlink" title="新手安装git之后如何clone我们在github上看到的项目"></a>新手安装git之后如何clone我们在github上看到的项目</h4><p>之前在公司安装了git，由于临时换了电脑重新安装git，突然发现git clone url报错<br><img src="img/error.png" alt="git clone error" title="git clone 报错"></p>
+            <h4 id="新手安装git之后如何clone我们在github上看到的项目"><a href="#新手安装git之后如何clone我们在github上看到的项目" class="headerlink" title="新手安装git之后如何clone我们在github上看到的项目"></a>新手安装git之后如何clone我们在github上看到的项目</h4><p>之前在公司安装了git，由于临时换了电脑重新安装git，突然发现git clone url报错<br><img src="2019-7-19/error.png" alt="git clone error" title="git clone 报错"></p>
 <ul>
 <li>权限被拒绝(publickey)</li>
 <li>无法从远程库读取</li>
@@ -311,20 +311,20 @@
 <li>这里的<code>youremail@example.com</code>指的是我们自己的邮箱</li>
 <li>然后我们会发现c盘（我的是c盘）administrator下生成了.ssh文件夹，并且里面对应有<code>id_rsa</code>和<code>id_rsa.pub</code>两个文件，如下图：</li>
 </ul>
-<p><img src="img/rsa.jpg" alt="id_rsa" title="生成的rsa"></p>
+<p><img src="2019-7-19/rsa.jpg" alt="id_rsa" title="生成的rsa"></p>
 <ul>
 <li>将<code>id_rsa.pub</code>用记事本打开并且复制内容到剪切板</li>
 <li>登录github账号，点击右上角小图标下拉setting</li>
 </ul>
-<p><img src="img/pointPic.png" alt="pointPic" title="点击图片选择setting"></p>
+<p><img src="2019-7-19/pointPic.png" alt="pointPic" title="点击图片选择setting"></p>
 <ul>
 <li>跳转页面之后点击左侧<code>SSH and GPG keys</code></li>
 </ul>
-<p><img src="img/addRsa.png" alt="addRsa" title="添加rsa"></p>
+<p><img src="2019-7-19/addRsa.png" alt="addRsa" title="添加rsa"></p>
 <ul>
 <li>点击<code>New SSH key</code>按钮，然后填上自己命名的Title</li>
 </ul>
-<p><img src="img/writeRsa.png" alt="pasteRsa" title="粘贴RSA"></p>
+<p><img src="2019-7-19/writeRsa.png" alt="pasteRsa" title="粘贴RSA"></p>
 <ul>
 <li>key下面的文本域就给我们之前复制的内容粘贴到里面，然后<code>Add SSH key</code>就完成了</li>
 </ul>
