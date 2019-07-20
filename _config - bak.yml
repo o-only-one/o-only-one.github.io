@@ -7,14 +7,14 @@ title: BlueSky #网站标题
 subtitle: #网站副标题
 description: #网站描述
 keywords: #网站关键字
-author: blue-sky #作者
+author: #作者
 language: #网站使用的语言
 timezone: #网站时区
 
 # URL 网址
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 ## 如果你的网站放在子目录中，请将url设置为'http://yoursite.com/child',将根目录root设置为'/child/'
-url: https://github.com/o-only-one #网址
+url: http://yoursite.com #网址
 root: / #网站根目录
 permalink: :year/:month/:day/:title/ #文章的永久连接
 permalink_defaults: #永久连接中各部分的默认值
@@ -74,10 +74,9 @@ pagination_dir: page #分页目录
 # Extensions 拓展
 ## Plugins: https://hexo.io/plugins/ 插件地址
 ## Themes: https://hexo.io/themes/ 主题地址
-#theme: icarus
+theme: icarus
 #theme: jacman
 #theme: next
-theme: Fan
 
 # Deployment 部署
 ## Docs: https://hexo.io/docs/deployment.html
