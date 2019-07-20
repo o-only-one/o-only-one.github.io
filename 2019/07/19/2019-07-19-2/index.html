@@ -164,20 +164,20 @@
         </h1>
         <div class="content">
             <h3 id="为什么用Object-prototype-toString-call-obj-去检测类型？"><a href="#为什么用Object-prototype-toString-call-obj-去检测类型？" class="headerlink" title="为什么用Object.prototype.toString.call(obj)去检测类型？"></a>为什么用Object.prototype.toString.call(obj)去检测类型？</h3><p>在看vue的发布者-订阅者模式的时候看到这么一句代码（无注释）</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(<span class="built_in">Object</span>.prototype.toString.call(callback) !== <span class="string">'[object Function]'</span>) <span class="keyword">return</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">if</span>(<span class="hljs-built_in">Object</span>.prototype.toString.call(callback) !== <span class="hljs-string">'[object Function]'</span>) <span class="hljs-keyword">return</span></span><br></pre></td></tr></table></figure>
 
 <p>一点都不明白所要表达的意思，然后就问了下度娘，发现这段代码其实是为了检测传入数据的类型，<br>我们平时检测类型不是用typeOf就是instanceof操作符，详细了解这个方式之后，觉得也是有其优势的，因为null的typeof是object，array的结果也是object，而有时候我们需要的是纯粹的object。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.prototype.toString.call(obj) === <span class="string">'[object Object]'</span>);</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">Object</span>.prototype.toString.call(obj) === <span class="hljs-string">'[object Object]'</span>);</span><br></pre></td></tr></table></figure>
 
 <p>使用以上方式可以很好的区分各种类型：<br>(无法区分自定义对象类型，自定义类型可以采用instanceof区分)</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.prototype.toString.call(<span class="string">"jerry"</span>));						<span class="comment">//[object String]</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.prototype.toString.call(<span class="number">12</span>));							<span class="comment">//[object Number]</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.prototype.toString.call(<span class="literal">true</span>));							<span class="comment">//[object Boolean]</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.prototype.toString.call(<span class="literal">undefined</span>));						<span class="comment">//[object Undefined]</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.prototype.toString.call(<span class="literal">null</span>));							<span class="comment">//[object Null]</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.prototype.toString.call(&#123;<span class="attr">name</span>:<span class="string">"jerry"</span>&#125;))					<span class="comment">//[object Object]</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.prototype.toString.call(<span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;&#125;))					<span class="comment">//[object Function]</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.prototype.toString.call([]))								<span class="comment">//[obejct Array]</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.prototype.toString.call(<span class="keyword">new</span> <span class="built_in">Date</span>))						<span class="comment">//[object Date]</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.prototype.toString.call(<span class="regexp">/\d/</span>))							<span class="comment">//[object RegExp]</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>)</span>&#123;&#125;;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.prototype.toString.call(<span class="keyword">new</span> Person()))					<span class="comment">//[object Object]</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">Object</span>.prototype.toString.call(<span class="hljs-string">"jerry"</span>));						<span class="hljs-comment">//[object String]</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">Object</span>.prototype.toString.call(<span class="hljs-number">12</span>));							<span class="hljs-comment">//[object Number]</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">Object</span>.prototype.toString.call(<span class="hljs-literal">true</span>));							<span class="hljs-comment">//[object Boolean]</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">Object</span>.prototype.toString.call(<span class="hljs-literal">undefined</span>));						<span class="hljs-comment">//[object Undefined]</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">Object</span>.prototype.toString.call(<span class="hljs-literal">null</span>));							<span class="hljs-comment">//[object Null]</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">Object</span>.prototype.toString.call(&#123;<span class="hljs-attr">name</span>:<span class="hljs-string">"jerry"</span>&#125;))					<span class="hljs-comment">//[object Object]</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">Object</span>.prototype.toString.call(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>)</span>&#123;&#125;))					<span class="hljs-comment">//[object Function]</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">Object</span>.prototype.toString.call([]))								<span class="hljs-comment">//[obejct Array]</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">Object</span>.prototype.toString.call(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>))						<span class="hljs-comment">//[object Date]</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">Object</span>.prototype.toString.call(<span class="hljs-regexp">/\d/</span>))							<span class="hljs-comment">//[object RegExp]</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Person</span>(<span class="hljs-params"></span>)</span>&#123;&#125;;</span><br><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">Object</span>.prototype.toString.call(<span class="hljs-keyword">new</span> Person()))					<span class="hljs-comment">//[object Object]</span></span><br></pre></td></tr></table></figure>
 
 <p>为什么这样区分呢？ toString方法返回反映这个对象的字符串<br>那为什么不直接用objec.toString()</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">"jerry"</span>.toString());							<span class="comment">//jerry</span></span><br><span class="line"><span class="built_in">console</span>.log((<span class="number">1</span>).toString());								<span class="comment">//1</span></span><br><span class="line"><span class="built_in">console</span>.log([<span class="number">1</span>,<span class="number">2</span>].toString());								<span class="comment">//1,2</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">new</span> <span class="built_in">Date</span>().toString());							<span class="comment">//Thu Jun 27 2019 11:04:25 GMT+0800 (中国标准时间)</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;.toString());						<span class="comment">//function()&#123;&#125;</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="literal">null</span>.toString());								<span class="comment">//error</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="literal">undefined</span>.toString());							<span class="comment">//error</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-string">"jerry"</span>.toString());							<span class="hljs-comment">//jerry</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log((<span class="hljs-number">1</span>).toString());								<span class="hljs-comment">//1</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log([<span class="hljs-number">1</span>,<span class="hljs-number">2</span>].toString());								<span class="hljs-comment">//1,2</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>().toString());							<span class="hljs-comment">//Thu Jun 27 2019 11:04:25 GMT+0800 (中国标准时间)</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>&#123;&#125;.toString());						<span class="hljs-comment">//function()&#123;&#125;</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-literal">null</span>.toString());								<span class="hljs-comment">//error</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-literal">undefined</span>.toString());							<span class="hljs-comment">//error</span></span><br></pre></td></tr></table></figure>
 
 <p>obj.toString()和Object.prototype.toString.call(obj)的结果不一样，这是为什么？<br>这是因为toString为Object的原型方法，而Array、Function等类型作为Object的实例，都重写了toString方法。不同的对象类型调用toString方法时，根据原型链的知识，调用的是对应的重写之后的toString方法<br>（FUnction返回函数体的字符串，Array返回元素组成的字符串），而不会去调用Object上原型toString方法（返回对象的具体类型），所以采用obj.toString()不能得到其对象类型，只能将obj转换为字符串类型；<br>因此，想要得到对象的具体类型时，应该调用Object上原型toString方法。</p>
 <p>我们可以验证一下，将数组的toString方法删除，看看会是什么结果：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Array</span>.prototype.hasOwnProperty(<span class="string">"toString"</span>));		<span class="comment">//true</span></span><br><span class="line"><span class="built_in">console</span>.log(arr.toString());									<span class="comment">//1,2,3</span></span><br><span class="line"><span class="keyword">delete</span> <span class="built_in">Array</span>.prototype.toString;								<span class="comment">//delete方法可以删除实例属性</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Array</span>.prototype.hasOwnProperty(<span class="string">"toString"</span>));		<span class="comment">//false</span></span><br><span class="line"><span class="built_in">console</span>.log(arr.toString());									<span class="comment">//[object Array]</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> arr = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>];</span><br><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">Array</span>.prototype.hasOwnProperty(<span class="hljs-string">"toString"</span>));		<span class="hljs-comment">//true</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(arr.toString());									<span class="hljs-comment">//1,2,3</span></span><br><span class="line"><span class="hljs-keyword">delete</span> <span class="hljs-built_in">Array</span>.prototype.toString;								<span class="hljs-comment">//delete方法可以删除实例属性</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">Array</span>.prototype.hasOwnProperty(<span class="hljs-string">"toString"</span>));		<span class="hljs-comment">//false</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(arr.toString());									<span class="hljs-comment">//[object Array]</span></span><br></pre></td></tr></table></figure>
 
 <p>删除了Array的toString方法后，同样采用arr.toString方法调用，不在有屏蔽Object原型方法的实例方法，因此沿着原型链，arr最后调用了Object的toString方法，返回了和Object.prototype.toString.call(obj)<br>相同的结果。</p>
 
@@ -281,7 +281,7 @@
             <div class="level-item has-text-centered is-marginless">
                 <div>
                     <p class="heading">
-                        Entradas
+                        投稿
                     </p>
                     <p class="title has-text-weight-normal">
                         3
@@ -291,7 +291,7 @@
             <div class="level-item has-text-centered is-marginless">
                 <div>
                     <p class="heading">
-                        Categorias
+                        カテゴリ
                     </p>
                     <p class="title has-text-weight-normal">
                         0
@@ -301,7 +301,7 @@
             <div class="level-item has-text-centered is-marginless">
                 <div>
                     <p class="heading">
-                        Etiquetas
+                        タグ
                     </p>
                     <p class="title has-text-weight-normal">
                         0
@@ -311,7 +311,7 @@
         </nav>
         <div class="level">
             <a class="level-item button is-link is-rounded" href="https://github.com/ppoffice" target="_blank">
-                SEGUIR</a>
+                フォローする</a>
         </div>
         
         
@@ -360,7 +360,7 @@
     <div class="card-content">
         <div class="menu">
         <h3 class="menu-label">
-            Links
+            リンク
         </h3>
         <ul class="menu-list">
         
@@ -398,7 +398,7 @@
     <div class="card-content">
         <div class="menu">
             <h3 class="menu-label">
-                Categorias
+                カテゴリ
             </h3>
             <ul class="menu-list">
             
@@ -416,7 +416,7 @@
 <div class="card widget">
     <div class="card-content">
         <h3 class="menu-label">
-            Recientes
+            最近の記事
         </h3>
         
         <article class="media">
@@ -484,7 +484,7 @@
     <div class="card-content">
         <div class="menu">
         <h3 class="menu-label">
-            Archivos
+            アーカイブ
         </h3>
         <ul class="menu-list">
         
@@ -508,7 +508,7 @@
     <div class="card-content">
         <div class="menu">
             <h3 class="menu-label">
-                Etiquetas
+                タグ
             </h3>
             <div class="field is-grouped is-grouped-multiline">
                 
@@ -532,7 +532,7 @@
 <div class="card widget">
     <div class="card-content">
         <h3 class="menu-label">
-            Recientes
+            最近の記事
         </h3>
         
         <article class="media">
@@ -600,7 +600,7 @@
     <div class="card-content">
         <div class="menu">
         <h3 class="menu-label">
-            Archivos
+            アーカイブ
         </h3>
         <ul class="menu-list">
         
@@ -624,7 +624,7 @@
     <div class="card-content">
         <div class="menu">
             <h3 class="menu-label">
-                Etiquetas
+                タグ
             </h3>
             <div class="field is-grouped is-grouped-multiline">
                 
@@ -803,10 +803,10 @@ document.addEventListener('DOMContentLoaded', function () {
     (function (window) {
         var INSIGHT_CONFIG = {
             TRANSLATION: {
-                POSTS: 'Entradas',
+                POSTS: '投稿',
                 PAGES: 'Pages',
-                CATEGORIES: 'Categorias',
-                TAGS: 'Etiquetas',
+                CATEGORIES: 'カテゴリ',
+                TAGS: 'タグ',
                 UNTITLED: '(Untitled)',
             },
             CONTENT_URL: '/content.json',
