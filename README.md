@@ -1,2 +1,2 @@
 # o-only-one.github.io
-learn git creat blog
+my github page
