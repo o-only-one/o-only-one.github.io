@@ -14,7 +14,7 @@ timezone: #网站时区
 # URL 网址
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 ## 如果你的网站放在子目录中，请将url设置为'http://yoursite.com/child',将根目录root设置为'/child/'
-url: https://github.com/o-only-one #网址
+url: https://o-only-one.github.io #网址
 root: / #网站根目录
 permalink: :year/:month/:day/:title/ #文章的永久连接
 permalink_defaults: #永久连接中各部分的默认值
